@@ -1,0 +1,32 @@
+﻿@model LINQ.Entities.PDSAMenuItemManager1
+
+@{
+    ViewBag.Title = "Data Driven NavBar";
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+@*******************************
+Header Navigation Area
+*******************************@
+
+<nav class="navbar navbar-default navbar-static-top"  role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="/Home/Index" class="navbar-brand">Home</a>
+        </div>
+        <ul class="nav navbar-nav">
+            @foreach (LINQ.Entities.PDSAMenuItem1 item in Model.Menus)
+            {
+                <li>
+                    <a href="@item.MenuAction">@item.MenuTitle</a>
+                </li>
+            }
+        </ul>
+
+    </div>
+</nav>
+
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>

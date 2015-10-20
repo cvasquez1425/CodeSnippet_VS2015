@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Pager 1 - Hard Code";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Boostrap Pager</title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <h2>Bootstrap Pager Samples</h2>
+    <div class="row">
+        <div class="col-md-12 center-block">
+            <ul class="pagination pagination-lg">
+                <li class="disabled">
+                    <a href="#" title="First Page">First</a>
+                </li>
+                <li class="disabled">
+                    <a href="#" title="Previous Page">Prev</a>
+                </li>
+                <li class="active">
+                    <a href="#" data-pdsa-action="Active" id="pagerId" title="Page 1">1</a>
+                </li>
+                <li>
+                    <a href="#" title="Page 2">2</a>
+                </li>
+                <li>
+                    <a href="#" title="Page 3">3</a>
+                </li>
+                <li>
+                    <a href="#" title="Page 4">4</a>
+                </li>
+                <li>
+                    <a href="#" title="Next Page">Next</a>
+                </li>
+                <li>
+                    <a href="#" title="Last Page">Last</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+
+@section scripts{
+    <script>
+        $(document).ready (function() {
+            // Connect to any elements that have 'data-pdsa-action'
+            $("[data-pdsa-action").on("click", function (event) {
+                event.preventDefault();
+
+                // store the last sort expression
+                $("#lastSortExpression").val($("#SortExpression").val());
+                $("#pagerId").val($(this).attr("data-pdsa-action"));
+                debugger
+                //Submit for with values filled in
+                $("form").submit();
+            });
+        });
+    </script>
+}

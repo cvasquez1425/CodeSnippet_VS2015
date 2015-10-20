@@ -1,0 +1,302 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/*Custom*/
+/*Block Headline*/
+.headline {
+  display: block;
+  margin: 10px 0 25px 0;
+  border-bottom: 1px dotted #e4e9f0;
+}
+
+.headline h2 {
+  font-size: 22px;
+}
+
+.headline h2, 
+.headline h3, 
+.headline h4 {
+  margin: 0 0 -2px 0;
+  padding-bottom: 5px;
+  display: inline-block;
+  border-bottom: 2px solid #72c02c;
+}
+
+.headline-md {
+  margin-bottom: 15px;
+}
+
+.headline-md h2 {
+  font-size: 21px;
+}
+
+/*Spaces
+------------------------------------*/
+.margin-left-5 { margin-left: 5px;}
+.margin-right-5 { margin-right: 5px;}
+
+.no-top-space {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.no-bottom-space {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.margin-bottom-5, 
+.margin-bottom-10, 
+.margin-bottom-15, 
+.margin-bottom-20,
+.margin-bottom-25, 
+.margin-bottom-30, 
+.margin-bottom-35, 
+.margin-bottom-40, 
+.margin-bottom-45, 
+.margin-bottom-50, 
+.margin-bottom-55, 
+.margin-bottom-60 { 
+   clear:both;
+}
+.margin-bottom-5  { margin-bottom:5px;}
+.margin-bottom-10 { margin-bottom:10px;} 
+.margin-bottom-15 { margin-bottom:15px;}
+.margin-bottom-20 { margin-bottom:20px;}
+.margin-bottom-25 { margin-bottom:25px;}
+.margin-bottom-30 { margin-bottom:30px;}
+.margin-bottom-35 { margin-bottom:35px;}
+.margin-bottom-40 { margin-bottom:40px;}
+.margin-bottom-45 { margin-bottom:45px;}
+.margin-bottom-50 { margin-bottom:50px;}
+.margin-bottom-55 { margin-bottom:55px;}
+.margin-bottom-60 { margin-bottom:60px;}
+
+/*Button Styles
+------------------------------------*/
+.btn {
+   box-shadow: none;
+}
+
+.btn-u {
+   border: 0;
+   color: #fff;
+   font-size: 14px;
+   cursor: pointer;
+   font-weight: 400;
+   padding: 6px 13px;
+   position: relative;
+   background: #72c02c;
+   display: inline-block;
+   text-decoration: none;
+}
+.btn-u:hover {
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+a.btn-u {
+   /*padding: 4px 13px;*/
+   /*vertical-align: middle;*/
+}
+
+.btn-u-sm,
+a.btn-u-sm {
+   padding: 3px 12px;
+}
+
+.btn-u-lg,
+a.btn-u-lg {
+   font-size: 18px;
+   padding: 10px 25px;
+}
+
+.btn-u-xs,
+a.btn-u-xs {
+   font-size: 12px;
+   padding: 2px 12px;   
+   line-height: 18px;
+}
+
+/*Button Groups*/
+.btn-group .dropdown-menu > li > a {
+   padding: 3px 13px;
+}
+
+.btn-group > .btn-u, 
+.btn-group-vertical > .btn-u {
+   float: left;
+   position: relative;
+}
+
+.btn-group > .btn-u:first-child {
+   margin-left: 0;
+}
+
+
+
+@media (max-width: 768px) {
+  .sm-margin-bottom-10 {
+    margin-bottom: 10px;
+  }
+  .sm-margin-bottom-20 {
+    margin-bottom: 20px;
+  }
+  .sm-margin-bottom-30 {
+    margin-bottom: 30px;
+  }
+  .sm-margin-bottom-40 {
+    margin-bottom: 40px;
+  }
+  .sm-margin-bottom-50 {
+    margin-bottom: 50px;
+  }
+  .sm-margin-bottom-60 {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 992px) {
+  .md-margin-bottom-10 {
+    margin-bottom: 10px;
+  }
+  .md-margin-bottom-20 {
+    margin-bottom: 20px;
+  }
+  .md-margin-bottom-30 {
+    margin-bottom: 30px;
+  }
+  .md-margin-bottom-40 {
+    margin-bottom: 40px;
+  }
+  .md-margin-bottom-50 {
+    margin-bottom: 50px;
+  }
+  .md-margin-bottom-60 {
+    margin-bottom: 60px;
+  }
+}
+
+/*Text Colors
+------------------------------------*/
+.color-sea { color: #1abc9c;}
+.color-red { color: #e74c3c;}
+.color-aqua { color: #27d7e7;}
+.color-blue { color: #3498db;}
+.color-grey { color: #95a5a6;}
+.color-dark { color: #555555;}
+.color-green { color: #72c02c;}
+.color-brown { color: #9c8061;}
+.color-light { color: #ffffff;}
+.color-orange { color: #e67e22;}
+.color-green1 { color: #2ecc71;}
+.color-purple { color: #9b6bcc;}
+.color-dark-blue { color: #4765a0;}
+.color-light-grey { color: #585f69;}
+.color-light-green { color: #79d5b3;}
+
+/*Background Colors
+------------------------------------*/
+.bg-color-dark,
+.bg-color-sea,
+.bg-color-red,
+.bg-color-aqua,
+.bg-color-blue,
+.bg-color-grey,
+.bg-color-green,
+.bg-color-brown,
+.bg-color-orange,
+.bg-color-green1,
+.bg-color-purple,
+.bg-color-dark-blue,
+.bg-color-light-grey,
+.bg-color-light-green {
+  color: #fff;
+}
+.bg-color-dark { background-color: #555;}
+.bg-color-sea { background-color: #1abc9c;}
+.bg-color-red { background-color: #e74c3c;}
+.bg-color-aqua { background-color: #27d7e7;}
+.bg-color-blue { background-color: #3498db;}
+.bg-color-grey { background-color: #95a5a6;}
+.bg-color-green { background-color: #72c02c;}
+.bg-color-brown { background-color: #9c8061;}
+.bg-color-orange { background-color: #e67e22;}
+.bg-color-green1 { background-color: #2ecc71;}
+.bg-color-purple { background-color: #9b6bcc;}
+.bg-color-dark-blue { background-color: #4765a0;}
+.bg-color-light-grey { background-color: #585f69;}
+.bg-color-light-green { background-color: #79d5b3;}
+
+/*Rounded and Circle Classes
+------------------------------------*/
+.rounded { border-radius: 4px !important;}
+.rounded-x { border-radius: 50% !important;}
+.rounded-2x { border-radius: 10px !important;}
+.rounded-3x { border-radius: 15px !important;}
+.rounded-4x { border-radius: 20px !important;}
+.rounded-top { border-radius: 4px 4px 0 0 !important;}
+.rounded-left { border-radius: 4px 0 0 4px !important;}
+.rounded-right { border-radius: 0 4px 4px 0 !important;}
+.rounded-bottom { border-radius: 0 0 4px 4px !important;}
+
+.copyright a,
+.footer a:hover,
+.copyright a:hover {
+	color: #72c02c;
+}
+
+/* Picture Carousel Bootstrap feature. Custom*/
+/*.carousel{
+    padding-top:20px;
+}*/
+
+/*
+    Styling the new Anchor Element from Paul D. Sheriff Extending The Bootstrap Accordion. Feb 2015
+    You remove the text-decoration from the anchor, float it to the right, and ensure that the cursor becomes a pointer when the user hovers over it.
+*/
+.panel > .panel-heading > .panel-title > a {
+    text-decoration: none
+}
+
+.pdsa-panel-toggle {
+    float:right;
+    cursor: pointer;
+}
+
+/*Create the submit-progress style using a fixed position on the screen. You will set the top and left to 50% to place this <div> in the middle of the page. Set some padding, width and margins that are appropriate for the message you are displaying. 
+Also select a background and foreground color.*/
+.submit-progress {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   height: 6em;
+   padding-top: 2.3em;
+   /* The following rules are the ones most likely to change */
+   width: 20em;
+   /* Set 'margin-left' to a negative number 
+      that is 1/2 of 'width' */
+   margin-left: -10em;
+   padding-left: 2.1em;
+   background-color: black;
+   color: white;
+}

@@ -1,0 +1,116 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Bootstrap Accordion</title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h1 class="panel-title">
+                    <a data-toggle="collapse"
+                       data-parent="#accordion"
+                       href="#country">Country Music</a>
+                    <a class="pdsa-panel-toggle"></a>
+                </h1>
+            </div>
+            <div id="country" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <h2>Country</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h1 class="panel-title">
+                    <a data-toggle="collapse"
+                       data-parent="#accordion"
+                       href="#rock">Rock Music</a>
+                    <a class="pdsa-panel-toggle"></a>
+                </h1>
+            </div>
+            <div id="rock" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <h2>Rock</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h1 class="panel-title">
+                    <a data-toggle="collapse"
+                       data-parent="#accordion"
+                       href="#jazz">Jazz Music</a>
+                    <a class="pdsa-panel-toggle"></a>
+                </h1>
+            </div>
+            <div id="jazz" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <h2>Jazz</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Add the down glyph to all elements
+        // that have the Class 'pdsa-panel-toggle'
+        $(".pdsa-panel-toggle").addClass("glyphicon glyphicon-chevron-down");
+
+        //So you need to write a little more JQuery, you'll need to identify all <div> elements that contain the class in,
+        var list = $(".in");
+        // get the id attribute of that <div>, and find the anchor tag that contains that id within its HREF attribute. 
+        // Once you find tha anchor tag, you remove the chevron-down glyph and add the chevron-up.
+        for (var i = 0; i < list.length; i++) {
+            $($("a[href='#" + $(list[i]).attr("id") +
+                "']")).next()
+            .removeClass("glyphicon glyphicon-chevron-down")
+            .addClass("glyphicon glyphicon-chevron-up");
+        }
+        // Function to detect which class is contained in the specific control and then toggle to the other glyphs. 
+        function toggleGlyph(ctl) {
+            if ($(ctl).hasClass("glyphicon glyphicon-chevron-up")) {
+                $(ctl).removeClass("glyphicon glyphicon-chevron-up");
+                $(ctl).addClass("glyphicon glyphicon-chevron-down");
+            }
+            else {
+                $(ctl).removeClass("glyphicon glyphicon-chevron-down");
+                $(ctl).addClass("glyphicon glyphicon-chevron-up");
+            }
+        }
+
+        $(".pdsa-panel-toggle").click(function () {
+            // Connect to the click event on each of your new anchor elements. When the anchor is clicked, you need to get the id of the <div>
+            //Retrieve the previous anchor tag's href
+            // attribute so you can toggle it.
+            $($(this).prev().attr("href")).collapse("toggle");
+            // change the glyphs
+            toggleGlyph($(this));
+        });
+
+        //You also need to tie into this click event so that you can toggle your glyphs as well. You can do that by adding the following code snippet.
+        $("a[data-toggle='collapse']").click(function () {
+            // Change the glyphs
+            toggleGlyph($(this).next());
+        });
+    });
+</script>
+
+
+

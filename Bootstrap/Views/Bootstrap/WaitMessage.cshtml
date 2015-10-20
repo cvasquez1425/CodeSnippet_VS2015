@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Submit with Progress Dialog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Displaying a Wait Message on an MVC Page</title>
+    <style>
+        .submit-progress-bg {
+            background-color: lightgray;
+            opacity: .5;
+        }
+    </style>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <h2>Bootstrap Misc. Samples</h2>
+
+    <div class="well well-sm">
+        This is a screen where the user might fill in some data, then post back to the server to save in the database.
+        When the user clicks on the Save button you will add the 'disabled' property to the button, change the text of the button, pop-up a message in the middle of the screen
+        and gray out the background.
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Add Music Genre
+        </div>
+        <div class="panel-body">
+            <p class="fa fa-bold">Music Genre<p />
+            <input type="text" class="form-control" /><br />
+            <button type="submit"
+                    id="submitButton"
+                    class="btn btn-primary"
+                    onclick="return DisplayProgressMessage(this, 'Saving...');">
+                Save
+            </button>
+            @*  Add Pop-Up Message Add a pop-up message by creating a <div> with a <label> in it. Within the label, place the text you wish to display.
+        Add a CSS class called 'submit-progress' to style the pop-up message. Set this <div>
+        as hidden so it won't show up until you want it to.*@
+            <div class="submit-progress hidden">
+                <label>Please wait while Saving Data...</label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+
+@*The DisplayProgressMessage first has to add the 'disabled' property to the button, then change the text of the button from 'Save' to 'Saving...'. Notice that you pass 'this' and the text 'Saving...' to the DisplayProgressMessage.
+    Here is the first pass at our DisplayProgressMessage function:*@
+<script type="text/javascript">
+
+    function DisplayProgressMessage(ctl, msg) {
+        debugger;
+        $(ctl).prop("disabled", true);
+        $(ctl).text(msg);
+        $(".submit-progress").removeClass("hidden");
+        $("body").addClass("submit-progress-bg");
+        return true;
+    };
+
+</script>
+
+@section scripts{
+    <script>
+        $(document).ready (function() {
+            // Connect to any elements that have 'data-pdsa-action'
+            $("[data-pdsa-action").on("click", function (event) {
+                event.preventDefault();
+
+                // store the last sort expression
+                $("#lastSortExpression").val($("#SortExpression").val());
+
+                //Submit for with values filled in 
+                $("form").submit();
+            });
+        });
+    </script>
+}

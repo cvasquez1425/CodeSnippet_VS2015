@@ -1,0 +1,11 @@
+﻿@using Books.Entities
+@using Books.Web.Helpers
+@{
+    //var items = new List<SelectListItem>();
+    //items.Add(new SelectListItem { Text = "Action" });
+
+    var items = typeof(Genrre).GetItems();
+}
+
+@Html.DropDownList("", items);
+

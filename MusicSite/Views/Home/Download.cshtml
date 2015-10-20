@@ -1,0 +1,142 @@
+﻿@*@{
+        ViewBag.Title = "Download";
+    }*@
+
+<h2>Download</h2>
+
+<!-- *** BEGIN: Styles ***-->
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+
+<div class="container">
+    <div class="row">
+        <header>
+            <a href="Default.html">My Tunes</a>
+        </header>
+    </div>
+</div>
+
+
+<div class="pdsa-submit-progress hidden">
+    <i class="fa fa-2x fa-spinner fa-spin"></i>
+    <label>
+        please wait While Downloading...
+    </label>
+</div>
+
+<div class="container body-content">
+    <div class="row">
+        <div class="text-center col-xs-12">
+            <h3> Display the following genres...</h3>
+            <div class="well well-sm">
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default">
+                        <span class="glyphicon glyphicon-unchecked"></span>
+                        <input type="checkbox" /> Jazz
+                        </>
+                    </label>
+                    <label class="btn btn-default">
+                        <span class="glyphicon glyphicon-unchecked"></span>
+                        <input type="checkbox" /> Country
+                    </label>
+                    <label class="btn btn-default">
+                        <span class="glyphicon glyphicon-unchecked"></span>
+                        <input type="checkbox" /> Rock
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Songs to Download</h3>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Song Name</th>
+                                <th>Artist</th>
+                                <th>Album</th>
+                                <th>Year</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>I got the boy</td>
+                                <td>Jana Kramer</td>
+                                <td>I got the boy (Single)</td>
+                                <td>2015</td>
+                            </tr>
+                            <tr>
+                                <td>Too Young To Feel This Old</td>
+                                <td>You Me At Six</td>
+                                <td>Cavalier Youth</td>
+                                <td>2014</td>
+                            </tr>
+                            <tr>
+                                <td>Chicago</td>
+                                <td>I fight Dragons</td>
+                                <td>The Near Future</td>
+                                <td>2014</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button type="submit"
+                        id="submitButton"
+                        class="btn btn-primary"
+                        onclick="return DisplayProgressMessage(this, 'Downloading...')" ;>
+                    Download
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- *** BEGIN: Scripts ***-->
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<!-- *** END: Scripts ***-->
+
+
+<script>
+    function DisplayProgressMessage(ctl, msg) {
+        $(ctl).prop('disabled', true);
+        $(ctl).text(msg);
+
+        setTimeout(function () {
+            $(".pdsa-submit-progress").removeClass("hidden");
+        }, 0);
+
+        //find the body class
+        $("body").addClass("pdsa-submit-progress-bg");
+
+        return true;
+    }
+
+    //    $(document).ready(function () {
+    // toggle the other way
+    $("[type='checkbox']").on('change', function () {
+        if ($(this).prop('checked')) {
+            $(this).prev()
+            .removeClass('glyphicon-unchecked')
+            .addClass('glyphicon-ok-circle');
+        }
+        else
+        {
+            $(this).prev()
+            .removeClass('glyphicon-ok-circle')
+            .addClass('glyphicon-unchecked');
+        }
+    });
+
+//    });
+</script>
